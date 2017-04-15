@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AD340TestApp</string>
+    <string name="app_name">AD340 Assignment 1: Test App</string>
+    <string name="name_field">Hi, my name is Joseph Sayler. I enjoy Java programming and hope
+    to take the skills I have learned in previous classes to make an awesome Android app!</string>
 </resources>
