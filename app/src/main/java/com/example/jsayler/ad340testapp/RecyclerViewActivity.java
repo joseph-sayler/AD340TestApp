@@ -14,6 +14,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     RelativeLayout relativeLayout;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
+    // make 2d array
     String[] subjects =
             {
                     "ANDROID",

@@ -10,16 +10,15 @@ import android.util.Log;
 import android.widget.GridView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    String msg = "MAIN ACTIVITY : ";
-    public static final String EXTRA_MESSAGE = "com.example.jsayler.ad340testapp";
+public class GridViewActivity extends AppCompatActivity {
+    String msg = "GRIDVIEW ACTIVITY : ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.gridview_layout);
 
-        /*GridView gridview = (GridView) findViewById(R.id.gridview);
+        GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -27,28 +26,17 @@ public class MainActivity extends AppCompatActivity {
                 if (position == 0) {
                     recyclerView(v);
                 } else {
-                    Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GridViewActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+                    Log.d(msg, "toast event");
                 }
             }
-        });*/
-
-        Log.d(msg, "create event");
+        });
     }
 
-    /** Called when the user taps the Send button */
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+    public void recyclerView(View view) {
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
-        Log.d(msg, "send message event");
-    }
-
-    public void viewGrid(View view) {
-        Intent intent = new Intent(this, GridViewActivity.class);
-        startActivity(intent);
-        Log.d(msg, "gridview event");
+        Log.d(msg, "recyclerView event");
     }
 
     @Override

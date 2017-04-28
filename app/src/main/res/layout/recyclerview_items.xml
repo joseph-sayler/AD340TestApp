@@ -8,12 +8,13 @@
         android:id="@+id/subject_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:layout_gravity="left"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         />
+    <!-- add another textview to show 2 side by side -->
 
 </LinearLayout>

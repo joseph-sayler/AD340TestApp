@@ -13,6 +13,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     View view1;
     ViewHolder viewHolder1;
     TextView textView;
+    // add another text view here
 
     public RecyclerViewAdapter(Context context1,String[] SubjectValues1){
 
@@ -46,6 +47,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position){
 
         holder.textView.setText(SubjectValues[position]);
+        // add another textView line here (use a 2d array for this and above)
     }
 
     @Override
