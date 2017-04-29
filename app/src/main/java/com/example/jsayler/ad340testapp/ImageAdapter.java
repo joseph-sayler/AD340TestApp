@@ -33,7 +33,7 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(450, 600));
+            imageView.setLayoutParams(new GridView.LayoutParams(600, 800));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
         } else {
@@ -53,7 +53,13 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.nes08, R.drawable.nes09,
             R.drawable.nes10, R.drawable.nes11,
             R.drawable.nes12, R.drawable.nes13,
-            R.drawable.nes14
+            R.drawable.nes14, R.drawable.nes15,
+            R.drawable.nes16, R.drawable.nes17,
+            R.drawable.nes18, R.drawable.nes19,
+            R.drawable.nes20, R.drawable.nes21,
+            R.drawable.nes22, R.drawable.nes23,
+            R.drawable.nes24, R.drawable.nes25,
+            R.drawable.nes26, R.drawable.nes27
     };
 
 }

@@ -11,6 +11,13 @@ import android.widget.Toast;
 
 public class GridViewActivity extends AppCompatActivity {
     String msg = "GRIDVIEW ACTIVITY : ";
+    String[] toastString = {
+            "Arrow","Blades of Steel","Battletoads","Castlevania","Duck Hunt","Excitebike",
+            "Final Fantasy","Ice Climbers","Kirby's Adventure","Zelda II: The Adventure of Link",
+            "Super Mario Bros.","Ninja Gaiden","Teenage Mutant Ninja Turtles","Q*bert","The Legend of Zelda",
+            "Slalom","Pinball","Metroid","Kid Icarus","Popeye","Gumshoe","Donkey Kong 3","Baseball",
+            "Donkey Kong Jr. Math","Wrecking Crew","10-Yard Fight","Balloon Fight","Mega Man 2"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +32,15 @@ public class GridViewActivity extends AppCompatActivity {
                 if (position == 0) {
                     recyclerView(v);
                 } else {
-                    Toast.makeText(GridViewActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GridViewActivity.this, "" + toastText(position), Toast.LENGTH_SHORT).show();
                     Log.d(msg, "toast event");
                 }
             }
         });
+    }
+
+    private String toastText(int pos) {
+        return toastString[pos];
     }
 
     public void recyclerView(View view) {
