@@ -4,4 +4,5 @@
     to take the skills I have learned in previous classes to make an awesome Android app!</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="viewname">TextView</string>
 </resources>

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="monospace"
-        android:text="TextView"
+        android:text="@string/viewname"
         android:textAppearance="@android:style/TextAppearance"
         android:textSize="30sp"
         android:typeface="monospace"

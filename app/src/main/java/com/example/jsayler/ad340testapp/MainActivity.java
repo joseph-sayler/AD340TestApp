@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(msg, "send message event");
     }
 
+    public void viewGrid(View view) {
+        Intent intent = new Intent(this, GridViewActivity.class);
+        startActivity(intent);
+        Log.d(msg, "gridview event");
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
