@@ -2,26 +2,33 @@ package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.util.Log;
+import android.view.MenuItem;
 
-public class DisplayMessageActivity extends OptionsMenu {
-    String msg = "DISPLAY MSG : ";
+public class About  extends OptionsMenu {
+    String msg = "ABOUT ACTIVITY : ";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
-
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(TextEntry.EXTRA_MESSAGE);
-
-        // Capture the layout's TextView and set the string as its text
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(message);
-
+        setContentView(R.layout.about_activity);
         Log.d(msg, "create event");
     }
+
+/*    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.Main:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                Log.d(msg, "Home event");
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }*/
 
     @Override
     protected void onStart() {

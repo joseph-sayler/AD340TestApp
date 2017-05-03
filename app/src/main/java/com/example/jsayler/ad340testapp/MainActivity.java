@@ -1,37 +1,51 @@
 package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.AdapterView;
 import android.util.Log;
+import android.widget.GridView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends OptionsMenu {
     String msg = "MAIN ACTIVITY : ";
-    public static final String EXTRA_MESSAGE = "com.example.jsayler.ad340testapp";
+    String[] toastString = {
+            "Arrow","Blades of Steel","Battletoads","Castlevania","Duck Hunt","Excitebike",
+            "Final Fantasy","Ice Climbers","Kirby's Adventure","Zelda II: The Adventure of Link",
+            "Super Mario Bros.","Ninja Gaiden","Teenage Mutant Ninja Turtles","Q*bert","The Legend of Zelda",
+            "Slalom","Pinball","Metroid","Kid Icarus","Popeye","Gumshoe","Donkey Kong 3","Baseball",
+            "Donkey Kong Jr. Math","Wrecking Crew","10-Yard Fight","Balloon Fight","Mega Man 2"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(msg, "create event");
+
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(new ImageAdapter(this));
+
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                if (position == 0) {
+                    recyclerView(v);
+                } else {
+                    Toast.makeText(MainActivity.this, "" + toastText(position), Toast.LENGTH_SHORT).show();
+                    Log.d(msg, "toast event");
+                }
+            }
+        });
     }
 
-    /** Called when the user taps the Send button */
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-        Log.d(msg, "send message event");
+    private String toastText(int pos) {
+        return toastString[pos];
     }
 
-    public void viewGrid(View view) {
-        Intent intent = new Intent(this, GridViewActivity.class);
+    public void recyclerView(View view) {
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
-        Log.d(msg, "gridview event");
+        Log.d(msg, "recyclerView event");
     }
 
     @Override
