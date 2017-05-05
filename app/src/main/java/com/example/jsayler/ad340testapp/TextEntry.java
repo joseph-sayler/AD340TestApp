@@ -2,11 +2,12 @@ package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.util.Log;
 
-public class TextEntry extends OptionsMenu {
+public class TextEntry extends AppCompatActivity {
     String msg = "TEXT ACTIVITY : ";
     public static final String EXTRA_MESSAGE = "com.example.jsayler.ad340testapp";
 

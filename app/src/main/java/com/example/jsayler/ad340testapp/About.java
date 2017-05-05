@@ -2,10 +2,11 @@ package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
-public class About  extends OptionsMenu {
+public class About  extends AppCompatActivity {
     String msg = "ABOUT ACTIVITY : ";
 
     @Override

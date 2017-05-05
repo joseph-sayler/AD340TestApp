@@ -2,10 +2,11 @@ package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.util.Log;
 
-public class DisplayMessageActivity extends OptionsMenu {
+public class DisplayMessageActivity extends AppCompatActivity {
     String msg = "DISPLAY MSG : ";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

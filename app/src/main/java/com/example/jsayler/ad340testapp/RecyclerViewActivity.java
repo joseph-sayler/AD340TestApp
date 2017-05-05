@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.RelativeLayout;
 
-public class RecyclerViewActivity extends OptionsMenu {
+public class RecyclerViewActivity extends AppCompatActivity {
 
     Context context;
     RecyclerView recyclerView;

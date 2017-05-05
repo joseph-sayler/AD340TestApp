@@ -2,13 +2,14 @@ package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.util.Log;
 import android.widget.GridView;
 import android.widget.Toast;
 
-public class MainActivity extends OptionsMenu {
+public class MainActivity extends AppCompatActivity {
     String msg = "MAIN ACTIVITY : ";
     String[] toastString = {
             "Arrow","Blades of Steel","Battletoads","Castlevania","Duck Hunt","Excitebike",
