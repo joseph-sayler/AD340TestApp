@@ -2,13 +2,14 @@ package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.util.Log;
 
-public class TextEntry extends AppCompatActivity {
+public class TextEntry extends OptionsMenu {
     String msg = "TEXT ACTIVITY : ";
     public static final String EXTRA_MESSAGE = "com.example.jsayler.ad340testapp";
 
@@ -16,8 +17,11 @@ public class TextEntry extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_entry);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
         Log.d(msg, "create event");
     }
 

@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">AD340 Test App</string>
-    <string name="txt_field1">Hi, my name is Joseph Sayler. I enjoy Java programming and hope to
+    <string name="about">Hi, my name is Joseph Sayler. I enjoy Java programming and hope to
         take the skills I have learned in previous classes to make an awesome Android app.
+
+        This application is used for learning purposes. It currently shows a list of classic NES
+        games. Eventually it may link to something on the web.
     </string>
-    <string name="txt_field2">This application is used for learning purposes. It currently shows a list of classic NES
-        games. Eventually it may link to something on the web.</string>
     <string name="menu_entry_about">About</string>
     <string name="menu_entry_textEntry">Text Entry</string>
     <string name="menu_entry_recyclerList">Game List</string>
@@ -12,4 +13,7 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="viewname">TextView</string>
+    <string name="gameview">Game Art</string>
+    <string name="action_search">Search</string>
+    <string name="share">Share</string>
 </resources>

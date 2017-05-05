@@ -15,29 +15,30 @@ public class OptionsMenu extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
+        Log.d(msg, "menu event");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
             case R.id.About:
                 Intent intent = new Intent(this, About.class);
                 startActivity(intent);
-                Log.d(msg, "About event");
+                Log.d(msg, "About menu event");
                 break;
             case R.id.TextEntry:
                 intent = new Intent(this, TextEntry.class);
                 startActivity(intent);
-                Log.d(msg, "TextEntry event");
+                Log.d(msg, "TextEntry menu event");
                 break;
             case R.id.GameList:
                 intent = new Intent(this, RecyclerViewActivity.class);
                 startActivity(intent);
-                Log.d(msg, "Recycler View event");
+                Log.d(msg, "Recycler menu View event");
                 break;
             default:
+                Log.d(msg, "superclass menu event");
                 return super.onOptionsItemSelected(item);
         }
         return true;
