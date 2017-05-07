@@ -1,5 +1,7 @@
 package com.example.jsayler.ad340testapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +31,46 @@ public class MainActivity extends OptionsMenu {
         Intent intent = new Intent(this, TextEntry.class);
         startActivity(intent);
         Log.d(msg, "textentry event");
+    }
+
+    public void popUpDialog(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+        mBuilder.setIcon(android.R.drawable.sym_def_app_icon)
+                .setTitle(R.string.dialog_title2)
+//                .setMessage(R.string.dialog_text)
+                .setItems(R.array.colors, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        if (id == 0) {
+                            Log.d(msg, "Red clicked");
+                        } else if (id == 1) {
+                            Log.d(msg, "Green clicked");
+                        } else if (id == 2) {
+                            Log.d(msg, "Blue clicked");
+                        } else {
+                            Log.d(msg, "Yellow clicked");
+                        }
+                    }
+/*                })
+
+                .setPositiveButton(R.string.ok_txt, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        Log.d(msg, "OK clicked");
+                    }
+                })
+                .setNegativeButton(R.string.cancel_txt, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        Log.d(msg, "Cancel clicked");
+                    }
+*/
+                });
+        AlertDialog alertDialog =  mBuilder.create();
+        alertDialog.show();
+        Log.d(msg, "dialog event");
     }
 
     @Override

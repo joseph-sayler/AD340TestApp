@@ -16,4 +16,45 @@
     <string name="gameview">Game Art</string>
     <string name="action_search">Search</string>
     <string name="share">Share</string>
+    <string name="dialog_title">Dialog Text</string>
+    <string name="dialog_title2">Pick a color:</string>
+    <string name="ok_txt">OK</string>
+    <string name="cancel_txt">Cancel</string>
+    <string name="dialog_text">Pick an option. Your choice will be logged.</string>
+    <string-array name="colors">
+        <item>"Red"</item>
+        <item>"Green"</item>
+        <item>"Blue"</item>
+        <item>"Yellow"</item>
+    </string-array>
+    <string-array name="toastString">
+        <item>"Arrow"</item>
+        <item>"Blades of Steel"</item>
+        <item>"Battletoads"</item>
+        <item>"Castlevania"</item>
+        <item>"Duck Hunt"</item>
+        <item>"Excitebike"</item>
+        <item>"Final Fantasy"</item>
+        <item>"Ice Climbers"</item>
+        <item>"Kirby's Adventure"</item>
+        <item>"Zelda II: The Adventure of Link"</item>
+        <item>"Super Mario Bros."</item>
+        <item>"Ninja Gaiden"</item>
+        <item>"Teenage Mutant Ninja Turtles"</item>
+        <item>"Q*bert"</item>
+        <item>"The Legend of Zelda"</item>
+        <item>"Slalom"</item>
+        <item>"Pinball"</item>
+        <item>"Metroid"</item>
+        <item>"Kid Icarus"</item>
+        <item>"Popeye"</item>
+        <item>"Gumshoe"</item>
+        <item>"Donkey Kong 3"</item>
+        <item>"Baseball"</item>
+        <item>"Donkey Kong Jr. Math"</item>
+        <item>"Wrecking Crew"</item>
+        <item>"10-Yard Fight"</item>
+        <item>"Balloon Fight"</item>
+        <item>"Mega Man 2"</item>
+    </string-array>
 </resources>

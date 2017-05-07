@@ -1,6 +1,7 @@
 package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,13 +14,6 @@ import android.widget.Toast;
 
 public class GridViewActivity extends OptionsMenu {
     String msg = "GRIDVIEW ACTIVITY : ";
-    String[] toastString = {
-            "Arrow","Blades of Steel","Battletoads","Castlevania","Duck Hunt","Excitebike",
-            "Final Fantasy","Ice Climbers","Kirby's Adventure","Zelda II: The Adventure of Link",
-            "Super Mario Bros.","Ninja Gaiden","Teenage Mutant Ninja Turtles","Q*bert","The Legend of Zelda",
-            "Slalom","Pinball","Metroid","Kid Icarus","Popeye","Gumshoe","Donkey Kong 3","Baseball",
-            "Donkey Kong Jr. Math","Wrecking Crew","10-Yard Fight","Balloon Fight","Mega Man 2"
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +21,11 @@ public class GridViewActivity extends OptionsMenu {
         setContentView(R.layout.gridview_activity);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
-
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 if (position == 0) {
@@ -47,7 +39,8 @@ public class GridViewActivity extends OptionsMenu {
     }
 
     private String toastText(int pos) {
-        return toastString[pos];
+        String[] gameNames = getResources().getStringArray(R.array.toastString);
+        return gameNames[pos];
     }
 
     public void recyclerView(View view) {

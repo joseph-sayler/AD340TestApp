@@ -6,9 +6,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 
-public class About  extends OptionsMenu {
+public class About extends OptionsMenu {
     String msg = "ABOUT ACTIVITY : ";
 
     @Override
@@ -20,7 +21,6 @@ public class About  extends OptionsMenu {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
         Log.d(msg, "create event");
     }
 
