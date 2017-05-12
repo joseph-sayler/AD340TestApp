@@ -1,10 +1,8 @@
 package com.example.jsayler.ad340testapp;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,7 +44,7 @@ public class GridViewActivity extends OptionsMenu {
     public void recyclerView(View view) {
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
-        Log.d(msg, "recyclerView event");
+        Log.d(msg, "JSONPostRecyclerView event");
     }
 
     @Override

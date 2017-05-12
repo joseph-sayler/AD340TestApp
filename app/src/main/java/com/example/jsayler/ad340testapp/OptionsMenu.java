@@ -35,7 +35,7 @@ public class OptionsMenu extends AppCompatActivity {
             case R.id.GameList:
                 intent = new Intent(this, RecyclerViewActivity.class);
                 startActivity(intent);
-                Log.d(msg, "Recycler menu View event");
+                Log.d(msg, "JSON Recycler menu event");
                 break;
             default:
                 Log.d(msg, "superclass menu event");
