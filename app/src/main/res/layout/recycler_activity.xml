@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.jsayler.ad340testapp.RecyclerViewActivity"
-    android:id="@+id/relativelayout1">
+    android:id="@+id/relativelayoutJSON">
 
     <include layout="@layout/toolbar" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview1"
+        android:id="@+id/jsonPost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
