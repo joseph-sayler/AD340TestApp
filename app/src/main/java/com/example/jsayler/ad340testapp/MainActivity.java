@@ -33,6 +33,12 @@ public class MainActivity extends OptionsMenu {
         Log.d(msg, "textentry event");
     }
 
+    public void recycleView(View view) {
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
+        startActivity(intent);
+        Log.d(msg, "recycleView event");
+    }
+
     public void popUpDialog(View view) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
         mBuilder.setIcon(android.R.drawable.sym_def_app_icon)

@@ -14,6 +14,7 @@
     <string name="button_send">Send</string>
     <string name="viewname">TextView</string>
     <string name="gameview">Game Art</string>
+    <string name="gamelist">Game List</string>
     <string name="action_search">Search</string>
     <string name="share">Share</string>
     <string name="dialog_title">Dialog Text</string>

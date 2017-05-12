@@ -1,4 +1,5 @@
 package com.example.jsayler.ad340testapp;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,17 +7,41 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+import java.util.Collections;
+import java.util.List;
 
-    String[][] SubjectValues;
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+
     Context context;
     View view1;
     ViewHolder viewHolder1;
+    LayoutInflater inflater;
+    List<JSONLayout> data = Collections.emptyList();
 
-    public RecyclerViewAdapter(Context context1,String[][] SubjectValues1){
+    public RecyclerViewAdapter(Context context1, List<JSONLayout> data){
+        this.context = context1;
+        inflater = LayoutInflater.from(context);
+        this.data = data;
 
-        SubjectValues = SubjectValues1;
-        context = context1;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        view1 = LayoutInflater.from(context).inflate(R.layout.recycler_adapter,parent,false);
+        viewHolder1 = new ViewHolder(view1);
+        return viewHolder1;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        JSONLayout current = data.get(position);
+        holder.textView1.setText(current.title);
+        holder.textView2.setText(current.date);
+    }
+
+    @Override
+    public int getItemCount() {
+        return data.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -28,31 +53,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             super(v);
 
-            textView1 = (TextView)v.findViewById(R.id.subject1);
-            textView2 = (TextView)v.findViewById(R.id.subject2);
+            textView1 = (TextView)v.findViewById(R.id.item1);
+            textView2 = (TextView)v.findViewById(R.id.item2);
         }
-    }
-
-    @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-
-        view1 = LayoutInflater.from(context).inflate(R.layout.recyclerview_items,parent,false);
-
-        viewHolder1 = new ViewHolder(view1);
-
-        return viewHolder1;
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
-
-        holder.textView1.setText(SubjectValues[position][0]);
-        holder.textView2.setText(SubjectValues[position][1]);
-    }
-
-    @Override
-    public int getItemCount(){
-
-        return SubjectValues.length;
     }
 }

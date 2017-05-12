@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jsayler.ad340testapp">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,12 +22,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".RecyclerViewActivity"
-            android:parentActivityName=".GridViewActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".GridViewActivity" />
-        </activity>
         <activity android:name=".About"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -43,6 +39,12 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TextEntry" />
+        </activity>
+        <activity android:name=".RecyclerViewActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 </manifest>
