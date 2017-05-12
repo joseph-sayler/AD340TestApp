@@ -1,8 +1,12 @@
 package com.example.jsayler.ad340testapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -30,7 +34,6 @@ public class RecyclerViewActivity extends OptionsMenu {
     RecyclerView.Adapter jsonRecyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
 
-    //private static final String ENDPOINT = "https://drive.google.com/file/d/0B99wiRp9KNZ_TlFEaE5HLVhpSWM/view?usp=sharing";
     private static final String ENDPOINT = "http://jsayler.icoolshow.net/AD410-json/nes_games.json";
 
     private RequestQueue requestQueue;
@@ -40,16 +43,10 @@ public class RecyclerViewActivity extends OptionsMenu {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_activity);
-
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
-        requestQueue = Volley.newRequestQueue(getApplicationContext());
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.setDateFormat("M/d/yy hh:mm a");
-        gson = gsonBuilder.create();
 
         context = getApplicationContext();
         relativeLayout = (RelativeLayout) findViewById(R.id.relativelayoutJSON);
@@ -57,13 +54,26 @@ public class RecyclerViewActivity extends OptionsMenu {
         recyclerViewLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(recyclerViewLayoutManager);
 
-        fetchPosts();
-    }
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.setDateFormat("M/d/yy");
+        gson = gsonBuilder.create();
 
-    public void fetchPosts() {
-        StringRequest request = new StringRequest(Request.Method.GET, ENDPOINT, onPostsLoaded, onPostsError);
-        requestQueue.add(request);
-        Log.d(msg, "fetchPosts()");
+        if (isWifiConnected()) {
+
+            StringRequest request = new StringRequest(Request.Method.GET, ENDPOINT, onPostsLoaded, onPostsError);
+            requestQueue.add(request);
+
+        } else {
+            new AlertDialog.Builder(this)
+                    .setTitle("No Wi-Fi Connection")
+                    .setMessage("It looks like your Wi-Fi connection is off. Please turn it " +
+                            "on and try again")
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    }).setIcon(android.R.drawable.ic_dialog_alert).show();
+        }
     }
 
     private final Response.Listener<String> onPostsLoaded = new Response.Listener<String>() {
@@ -73,9 +83,9 @@ public class RecyclerViewActivity extends OptionsMenu {
             jsonRecyclerViewAdapter = new RecyclerViewAdapter(context, posts);
             recyclerView.setAdapter(jsonRecyclerViewAdapter);
             Log.d(msg, "Response.Listener");
-            for (JSONLayout post : posts) {
-                Log.i("PostActivity", post.title + ": " + post.date);
-            }
+//            for (JSONLayout post : posts) {
+//                Log.i("PostActivity", post.title + ": " + post.date);
+//            }
         }
     };
 
@@ -85,4 +95,11 @@ public class RecyclerViewActivity extends OptionsMenu {
             Log.e(msg, error.toString());
         }
     };
+
+    private boolean isWifiConnected() {
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        return networkInfo != null && (ConnectivityManager.TYPE_WIFI == networkInfo.getType()) && networkInfo.isConnected();
+    }
 }

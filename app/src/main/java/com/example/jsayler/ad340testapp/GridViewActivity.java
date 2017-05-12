@@ -44,7 +44,7 @@ public class GridViewActivity extends OptionsMenu {
     public void recyclerView(View view) {
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
-        Log.d(msg, "JSONPostRecyclerView event");
+        Log.d(msg, "recyclerView event");
     }
 
     @Override

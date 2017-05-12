@@ -33,10 +33,10 @@ public class MainActivity extends OptionsMenu {
         Log.d(msg, "textentry event");
     }
 
-    public void jsonTest(View view) {
+    public void recycleView(View view) {
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
-        Log.d(msg, "jsonTest event");
+        Log.d(msg, "recycleView event");
     }
 
     public void popUpDialog(View view) {
