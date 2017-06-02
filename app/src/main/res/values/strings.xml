@@ -58,4 +58,21 @@
         <item>"Balloon Fight"</item>
         <item>"Mega Man 2"</item>
     </string-array>
+
+    <string name="latitude_label">Latitude</string>
+    <string name="longitude_label">Longitude</string>
+    <string name="location">Current Location</string>
+    <string name="menu_entry_curLoc">Location</string>
+    <string name="no_location_detected">No location detected. Make sure Location permissions are granted for this application.</string>
+
+    <string name="no_geocoder_available">No geocoder available</string>
+
+    <string name="fetch_address">Fetch address</string>
+
+    <string name="address_found">Address found</string>
+
+    <string name="no_address_found">Sorry, no address found</string>
+    <string name="no_location_data_provided">No location data provided</string>
+    <string name="service_not_available">Sorry, the service is not available</string>
+    <string name="invalid_lat_long_used">Invalid latitude or longitude used</string>
 </resources>

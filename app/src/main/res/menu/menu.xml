@@ -19,5 +19,9 @@
         android:title="@string/menu_entry_about"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_action_info"/>
-
+    <item
+        android:id="@+id/Location"
+        android:icon="@drawable/ic_action_my_location"
+        android:title="@string/menu_entry_curLoc"
+        app:showAsAction="ifRoom" />
 </menu>
