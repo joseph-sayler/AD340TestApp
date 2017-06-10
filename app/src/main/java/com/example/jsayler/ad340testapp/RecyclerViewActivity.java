@@ -34,7 +34,7 @@ public class RecyclerViewActivity extends OptionsMenu {
     RecyclerView.Adapter jsonRecyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
 
-    private static final String ENDPOINT = "http://jsayler.icoolshow.net/AD410-json/nes_games.json";
+    private static final String ENDPOINT = "https://joseph-sayler.github.io/AD340TestApp/nes_games.json";
 
     private RequestQueue requestQueue;
     private Gson gson;

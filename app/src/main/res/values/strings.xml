@@ -4,7 +4,7 @@
         take the skills I have learned in previous classes to make an awesome Android app.
 
         This application is used for learning purposes. It currently shows a list of classic NES
-        games. Eventually it may link to something on the web.
+        games, a text entry area, and a simple map. Eventually it may link to something on the web.
     </string>
     <string name="menu_entry_about">About</string>
     <string name="menu_entry_textEntry">Text Entry</string>
