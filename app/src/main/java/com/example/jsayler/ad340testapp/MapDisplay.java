@@ -29,8 +29,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener, OnMapReadyCallback {
 
-    protected static final String msg = "MapDisplay";
-
     protected static final int LOCATION_PERMISSIONS = 0;
 
     final static int REQUEST_LOCATION = 9;
@@ -81,8 +79,6 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        Log.d(msg, "create event");
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -91,7 +87,6 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
                                .addOnConnectionFailedListener(this)
                                .addApi(LocationServices.API)
                                .build();
-        Log.d(msg, "GoogleAPIClient created");
     }
 
     @Override
@@ -115,7 +110,6 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
         } else {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             if (mLastLocation != null) {
-                Log.d("loc: ", mLastLocation.toString());
                 setMap();
                 if (mAddressRequested) {
                     startIntentService();
@@ -124,7 +118,6 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
             mLatitudeText.setText(String.format("%s: %f", mLatitudeLabel, mLastLocation.getLatitude()));
             mLongitudeText.setText(String.format("%s: %f", mLongitudeLabel, mLastLocation.getLongitude()));
         }
-        Log.d(msg, "connected event");
     }
 
     protected void startIntentService() {
@@ -146,7 +139,6 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
                     overridePendingTransition(0, 0);
                     startActivity(getIntent());
                     overridePendingTransition(0, 0);
-                    Log.i(msg, "activity reloaded after enabling location permission");
                 } else {
                     showToast(getString(R.string.no_location_detected));
                 }
@@ -157,12 +149,10 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
 
     @Override
     public void onConnectionFailed(ConnectionResult result) {
-        Log.i(msg, "Connection failed: " + result.getErrorCode());
     }
 
     @Override
     public void onConnectionSuspended(int cause) {
-        Log.i(msg, "connection suspended");
         mGoogleApiClient.connect();
     }
 
@@ -195,7 +185,6 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
     protected void onStart() {
         mGoogleApiClient.connect();
         super.onStart();
-        Log.d(msg, "start event");
     }
 
     @Override
@@ -204,6 +193,5 @@ public class MapDisplay extends AppCompatActivity implements ConnectionCallbacks
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
-        Log.d(msg, "stop event");
     }
 }

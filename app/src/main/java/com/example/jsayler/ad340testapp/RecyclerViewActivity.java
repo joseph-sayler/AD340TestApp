@@ -27,7 +27,6 @@ import java.util.List;
 
 public class RecyclerViewActivity extends OptionsMenu {
 
-    String msg = "RECYCLER VIEW :";
     Context context;
     RecyclerView recyclerView;
     RelativeLayout relativeLayout;
@@ -82,17 +81,12 @@ public class RecyclerViewActivity extends OptionsMenu {
             List<JSONLayout> posts = Arrays.asList(gson.fromJson(response, JSONLayout[].class));
             jsonRecyclerViewAdapter = new RecyclerViewAdapter(context, posts);
             recyclerView.setAdapter(jsonRecyclerViewAdapter);
-            Log.d(msg, "Response.Listener");
-//            for (JSONLayout post : posts) {
-//                Log.i("PostActivity", post.title + ": " + post.date);
-//            }
         }
     };
 
     private final Response.ErrorListener onPostsError = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-            Log.e(msg, error.toString());
         }
     };
 

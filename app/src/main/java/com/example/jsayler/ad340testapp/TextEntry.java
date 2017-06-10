@@ -22,7 +22,6 @@ public class TextEntry extends OptionsMenu {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        Log.d(msg, "create event");
     }
 
     /** Called when the user taps the Send button */
@@ -32,36 +31,30 @@ public class TextEntry extends OptionsMenu {
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
-        Log.d(msg, "send message event");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(msg, "start event");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(msg, "resume event");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(msg, "pause event");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(msg, "stop event");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d(msg, "destroy event");
     }
 }
